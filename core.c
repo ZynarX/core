@@ -4,10 +4,10 @@
 
 string string_init(size_t size)
 {
-    string str;
-    str.data = malloc(size * sizeof(char));
-    str.capacity = size > 0 ? size : 1;
-    str.length = 0;
+    string str = {.data = malloc(size * sizeof(char)),
+                  .capacity = size > 0 ? size : 1,
+                  .length = 0};
+
     str.data[0] = '\0';
 
     return str;
