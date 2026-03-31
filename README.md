@@ -26,24 +26,26 @@ destroy_string(&s2);
 ### array
 ```c
 array arr = array_init(8, sizeof(int));
-array arr2 = array_initd(8, sizeof(int));
 
-int x = 42;
-ainsert(&arr, &x);
+array arr2 = array_initd(8, sizeof(int), (int[]){1, 2, 3, 4, 5});
+
+int a = 8;
+ainsert(&arr, &a);
 
 destroy_array(&arr);
+destroy_array(&arr2);
 ```
 
 ### map
 ```c
-map m = map_init(8, sizeof(string), sizeof(int));
-map m2 = map_initd(8, sizeof(string), sizeof(int));
+map m = map_init(8, sizeof(char), sizeof(int));
 
-string key = string_initd(8, "health");
-int value = 100;
-minsert(&m, &key, &value);
+map m2 = map_initd(8, sizeof(char), sizeof(int),
+    (char[]){'a', 'b', 'c'},
+    (int[]){1, 2, 3});
 
 destroy_map(&m);
+destroy_map(&m2);
 ```
 
 ## License
