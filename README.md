@@ -9,7 +9,7 @@ A generic data structures library written in pure C.
 
 ## Building
 ```bash
-gcc src/core.c -o corelib
+gcc core.c -o corelib
 ```
 
 ## Usage
